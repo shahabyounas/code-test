@@ -1,0 +1,14 @@
+{
+  "name": "booksearchdb",
+  "version": "1.0.0",
+  "description": "This is faker persistant layer",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shahab",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1"
+  }
+}

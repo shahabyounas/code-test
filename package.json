@@ -1,0 +1,20 @@
+{
+  "name": "bookseller",
+  "version": "1.0.0",
+  "description": "This is book seller client",
+  "main": "index.client.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "books",
+    "sell",
+    "buy"
+  ],
+  "author": "Shahab",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

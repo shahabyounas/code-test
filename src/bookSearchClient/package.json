@@ -1,0 +1,21 @@
+{
+  "name": "booksearchclient",
+  "version": "1.0.0",
+  "description": "This is client lib",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "shahab",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.24.4",
+    "babel-jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

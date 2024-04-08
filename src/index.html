@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" media="screen" href="./style/common.screen.css" />
+    <link rel="stylesheet" media="screen" href="index.screen.css" />
+
+    <script type="module" src="index.client.js"></script>
+    <script type="module" src="./bookSearchClient/BookSearch.js"></script>
+
+    <title>Book Library Client</title>
+  </head>
+
+  <body>
+    <div id="example">
+      <header>
+        <h1><a href="#"> Book Search Library </a></h1>
+      </header>
+      <h2>Filter/Search books</h2>
+
+      <div id="filters">
+        <label>
+          <span> Author </span>
+          <input type="text" name="author" />
+        </label>
+
+        <label>
+          <span> Publisher </span>
+          <input type="text" name="publisher" />
+        </label>
+      </div>
+
+      <table id="books">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">
+              <button value="author">
+                <span>Author</span>
+                <span class="asc" aria-hidden="true"></span>
+                <span class="desc" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th scope="col">
+              <button value="publisher">
+                <span>Publisher</span>
+                <span class="asc" aria-hidden="true"></span>
+                <span class="desc" aria-hidden="true"></span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr hidden>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
