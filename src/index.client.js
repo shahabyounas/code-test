@@ -97,14 +97,13 @@ function getBooks(){
        data = resp
     })
     .catch((err) => {
-       alert('Can not connect to the server, try again later')
+        throw err
     })
 
 }
 
 function updatePageFromURL(){
     let params = new URLSearchParams(location.search)
-
 
     filters.author = getStringParam(params, 'author')
     filters.publisher = getStringParam(params, 'publisher')

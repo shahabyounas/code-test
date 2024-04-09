@@ -1,11 +1,30 @@
 
+import { BookSearch } from "./BookSearch"
 
-describe("BookSearch", () => {
+
+describe("My BookSearch" , () => {
+
+    let bookSearch;
+
+    beforeEach(() => {
+      bookSearch = new BookSearch();
+    });
+
+
+    test("Should return 401 on empty params", async () => {
+
+        const resp = await bookSearch.getBooksByAuthor({})
+
+        expect(resp.statusCode).toBe(401)
+    })
 
     test("It should accept the valid parameter", async () => {
+        
+        const client = new BookSearch()
 
-        const params = { author: 'author', limit: 10 }
+        const resp = await client.getBooksByAuthor({ author: 'test' })
 
-        expect(params.limit).toBe(10)
+        // Need match actual data
+        expect(resp).toEqual(expect.any(Object))
     })
 })

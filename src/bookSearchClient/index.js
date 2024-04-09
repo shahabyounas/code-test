@@ -1,4 +1,1 @@
-// const { BookSearch } = require('./BookSearch')
-import { BookSearch } from './BookSearch.js'
-
-export  { BookSearch }
+export { BookSearch } from './BookSearch.js'

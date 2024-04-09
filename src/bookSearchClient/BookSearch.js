@@ -1,11 +1,11 @@
 import { ErrorHandler } from "./SellerAPIs/ErrorHandler.js"
 import { SellerAPI } from "./SellerAPIs/SellerAPI.js"
-import { DATA_LIMIT, BASE_URL } from "./SellerAPIs/constants.js"
+import { DATA_LIMIT } from "./SellerAPIs/constants.js"
 
 
 class BookSearch extends SellerAPI {
     constructor(){
-        super('json', BASE_URL )
+        super()
     }
 
     /**
@@ -17,13 +17,16 @@ class BookSearch extends SellerAPI {
 
      getBooksByAuthor(params = {}){
 
+        // Validators - validate params
+
         try {
 
             if(!params['author']){
-                return new ErrorHandler('author name required')
+                return new ErrorHandler(401, 'author name required')
             }
     
             const url = new URL(this.baseUrl + '/books')
+            
             url.searchParams.set('author', params.author)
             url.searchParams.set('limit', params.limit || DATA_LIMIT)
             url.searchParams.set('format', this.format)
@@ -34,7 +37,6 @@ class BookSearch extends SellerAPI {
             console.error(error)
             throw error
         }
-
     }
 
 }

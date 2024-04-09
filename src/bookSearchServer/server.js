@@ -38,11 +38,9 @@ router.on('GET', '/', (req, res, params) => {
     res.end('Hello World Node Server');
 })
 
-router.on('GET', '/books', (req, res, params) => {
+router.on('GET', '/books', async (req, res, params) => {
   
     const reqQueryParams = url.parse(req.url, true).query
-
-    console.log(reqQueryParams)
 
     if(reqQueryParams.format in cache) {
         return res.end(cache[reqQueryParams.format])
@@ -51,11 +49,22 @@ router.on('GET', '/books', (req, res, params) => {
     const data = responseFactory(reqQueryParams.format)
     cache[reqQueryParams.format] = data
     
+    // await new Promise(resolve => setTimeout(resolve, 9000));
+
     res.end(data)
 })
 
+router.on('GET', '/status', (req, res, params) => {
+
+    let status = {
+        up_time: format(Math.floor(process.uptime()))
+    }
+
+    res.end(JSON.stringify(status))
+})
+
 function responseFactory(type = 'json'){
-    console.log(type)
+
     switch(type) {
         case 'xml':
             return new Books().getXMLData()
@@ -66,6 +75,17 @@ function responseFactory(type = 'json'){
     }
 
 }
+
+function format(seconds){
+    function pad(s){
+      return (s < 10 ? '0' : '') + s;
+    }
+    var hours = Math.floor(seconds / (60*60));
+    var minutes = Math.floor(seconds % (60*60) / 60);
+    var seconds = Math.floor(seconds % 60);
+  
+    return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+  }
 
 start()
 
